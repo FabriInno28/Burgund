@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#281416">
+  <meta name="description" content="Bourgogne 2027 – drei Tage, sechs Domaines, ein Fahrer und viel Zeit dazwischen.">
+  <title>Bourgogne 2027 · 14.–16. Mai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f4f0e7;
+      --paper-2:#ece5d8;
+      --ink:#241f1c;
+      --muted:#6d655e;
+      --wine:#731f2a;
+      --wine-dark:#38151a;
+      --green:#2f4737;
+      --gold:#b18a52;
+      --line:rgba(36,31,28,.15);
+      --white:#fffdf8;
+      --serif:"Playfair Display", Georgia, serif;
+      --sans:"DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --shadow:0 24px 60px rgba(37,22,19,.14);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--paper)}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);line-height:1.55}
+    a{color:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent }
+    img{display:block;width:100%}
+    .wrap{width:min(1180px, calc(100% - 40px));margin-inline:auto}
+    .eyebrow{font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;font-weight:600;color:var(--wine)}
+    h1,h2,h3{font-family:var(--serif);line-height:1.02;margin:0;font-weight:600}
+    h2{font-size:clamp(2.2rem,6vw,4.8rem)}
+    p{margin:.55rem 0}
+    .muted{color:var(--muted)}
+    .small{font-size:.86rem}
+    .pill{display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .8rem;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(27,16,16,.26);backdrop-filter:blur(10px);font-size:.76rem}
+    .btn{appearance:none;border:0;border-radius:999px;padding:.9rem 1.1rem;font:600 .88rem var(--sans);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .btn:active{transform:scale(.98)}
+    .btn-primary{background:var(--wine);color:white}
+    .btn-light{background:rgba(255,253,248,.94);color:var(--ink)}
+    .btn-ghost{background:transparent;border:1px solid currentColor}
+    .nav{position:absolute;z-index:5;top:0;left:0;right:0;color:white}
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{font:600 1rem var(--serif);letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    .nav-links{display:flex;align-items:center;gap:1.25rem;font-size:.82rem}
+    .nav-links a{text-decoration:none;opacity:.85}
+    .nav-links a:hover{opacity:1}
+    .hero{min-height:92svh;position:relative;display:flex;align-items:flex-end;color:white;overflow:hidden;background:#4e3a2f}
+    .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(25,14,14,.23) 0%,rgba(26,15,15,.16) 30%,rgba(26,15,15,.72) 90%),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Beaune%20(C%C3%B4te%20d%27Or%2C%20Fr)%20Vignobles.JPG?width=1800");background-size:cover;background-position:center 45%;transform:scale(1.02)}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 28%,rgba(240,184,92,.22),transparent 29%)}
+    .hero-content{position:relative;z-index:2;padding:150px 0 72px;max-width:900px}
+    .hero h1{font-size:clamp(4rem,13vw,9rem);letter-spacing:-.045em}
+    .hero .date{font-family:var(--serif);font-size:clamp(1.25rem,3vw,2rem);margin-top:.3rem}
+    .hero .manifesto{font-family:var(--serif);font-size:clamp(1.55rem,4.3vw,3.4rem);line-height:1.05;max-width:840px;margin:2rem 0 1rem}
+    .hero-copy{max-width:650px;color:rgba(255,255,255,.86);font-size:1rem}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.6rem}
+    .scroll-cue{margin-top:2rem;display:flex;align-items:center;gap:.7rem;font-size:.76rem;opacity:.75}
+    .scroll-line{width:48px;height:1px;background:currentColor}
+    .intro{padding:96px 0 72px}
+    .intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end}
+    .intro-lead{font:600 clamp(1.65rem,3.3vw,2.8rem)/1.15 var(--serif);margin-top:1rem}
+    .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .principle{padding:18px;border-top:1px solid var(--line)}
+    .principle strong{display:block;font-family:var(--serif);font-size:1.12rem}
+    .principle span{font-size:.8rem;color:var(--muted)}
+    .route{padding:80px 0;background:var(--white)}
+    .section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
+    .section-head p{max-width:560px;color:var(--muted)}
+    .route-card{display:grid;grid-template-columns:.92fr 1.08fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper);box-shadow:var(--shadow)}
+    .route-copy{padding:42px}
+    .route-list{margin-top:28px;display:grid;gap:18px}
+    .route-item{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}
+    .route-day{width:42px;height:42px;border-radius:50%;background:var(--wine);color:white;display:grid;place-items:center;font:600 .8rem var(--serif)}
+    .route-item:nth-child(2) .route-day{background:var(--gold);color:#281b11}
+    .route-item:nth-child(3) .route-day{background:var(--green)}
+    .route-item strong{font-family:var(--serif);font-size:1.15rem}
+    .route-item span{display:block;color:var(--muted);font-size:.84rem}
+    .route-map{min-height:440px;background:#e9e3d6;display:grid;place-items:center;padding:30px}
+    .route-map svg{width:min(100%,500px);height:auto;overflow:visible}
+    .days{padding:100px 0}
+    .day{margin:0 0 92px}
+    .day:last-child{margin-bottom:0}
+    .day-visual{position:relative;min-height:520px;border-radius:32px;overflow:hidden;background:#4a4038;box-shadow:var(--shadow)}
+    .day-visual::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center}
+    .day-friday::before{background-image:linear-gradient(180deg,rgba(30,19,19,.10),rgba(30,19,19,.74)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Vineyards%20Gevrey-Chambertin.jpg?width=1600")}
+    .day-saturday::before{background-image:linear-gradient(180deg,rgba(30,19,19,.08),rgba(30,19,19,.74)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Pernand-Vergelesses%2C%20le%20village%20et%20son%20vignoble%20(2).jpg?width=1600")}
+    .day-sunday::before{background-image:linear-gradient(180deg,rgba(30,19,19,.08),rgba(30,19,19,.74)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/C%C3%B4te%20de%20Beaune%2C%20Burgundy%20vineyard.jpg?width=1600")}
+    .day-title{position:absolute;left:clamp(24px,5vw,58px);right:clamp(24px,5vw,58px);bottom:clamp(24px,5vw,52px);color:white}
+    .day-title h3{font-size:clamp(2.4rem,7vw,5.4rem)}
+    .day-title p{max-width:760px;color:rgba(255,255,255,.86)}
+    .day-content{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;padding:38px 34px 0}
+    .rhythm{font-family:var(--serif);font-size:1.45rem;line-height:1.25}
+    .stops{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .stop{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;min-height:172px;display:flex;flex-direction:column}
+    .stop .num{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);font-weight:600}
+    .stop h4{font:600 1.25rem/1.15 var(--serif);margin:.65rem 0 .45rem}
+    .stop p{font-size:.84rem;color:var(--muted);margin:0 0 1rem}
+    .stop a{margin-top:auto;font-size:.78rem;text-underline-offset:4px}
+    .home{padding:100px 0;background:var(--wine-dark);color:white}
+    .home-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .home h2{margin:.65rem 0 1.2rem}
+    .home .eyebrow{color:#dfb76f}
+    .home p{color:rgba(255,255,255,.72);max-width:560px}
+    .hotel-card{background:var(--paper);color:var(--ink);border-radius:26px;padding:28px;box-shadow:0 28px 65px rgba(0,0,0,.22)}
+    .hotel-card h3{font-size:2rem;margin:.25rem 0}
+    .hotel-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0}
+    .hotel-meta div{border-top:1px solid var(--line);padding-top:12px}
+    .hotel-meta strong{display:block;font-family:var(--serif);font-size:1.2rem}
+    .hotel-meta span{font-size:.72rem;color:var(--muted)}
+    .food{padding:100px 0}
+    .food-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+    .quote{font:600 clamp(2.2rem,5vw,4.9rem)/1.04 var(--serif);letter-spacing:-.03em}
+    .quote em{color:var(--wine)}
+    .food-list{display:grid;gap:0}
+    .food-item{padding:22px 0;border-top:1px solid var(--line)}
+    .food-item:last-child{border-bottom:1px solid var(--line)}
+    .food-item strong{display:block;font-family:var(--serif);font-size:1.4rem}
+    .food-item span{color:var(--muted);font-size:.88rem}
+    .not-this{padding:90px 0;background:var(--white)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .split-card{padding:40px;border:1px solid var(--line);border-radius:24px;background:var(--paper)}
+    .split-card.good{background:var(--green);color:white;border-color:transparent}
+    .split-card h3{font-size:2.2rem;margin-bottom:1.1rem}
+    .checks{list-style:none;padding:0;margin:0;display:grid;gap:.7rem}
+    .checks li{display:flex;gap:.8rem;align-items:center;font-size:.92rem}
+    .checks li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--wine);flex:none}
+    .good .checks li::before{background:#d7b56f}
+    .costs{padding:100px 0;background:var(--paper-2)}
+    .cost-grid{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:center}
+    .cost-list{margin-top:26px;display:grid;gap:12px}
+    .cost-line{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-top:1px solid var(--line)}
+    .cost-line span:last-child{color:var(--muted);text-align:right}
+    .price{background:var(--white);border:1px solid var(--line);border-radius:28px;padding:34px;text-align:center;box-shadow:var(--shadow)}
+    .price strong{display:block;font:600 clamp(2.6rem,7vw,5rem)/1 var(--serif);color:var(--wine);margin:.65rem 0}
+    .price p{font-size:.8rem;color:var(--muted)}
+    .status{padding:80px 0;background:var(--white)}
+    .status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+    .status-card{border:1px solid var(--line);padding:22px;border-radius:18px}
+    .status-card b{font-family:var(--serif);font-size:1.25rem}
+    .status-card span{display:block;margin-top:.45rem;font-size:.82rem;color:var(--muted)}
+    .closing{position:relative;min-height:72svh;color:white;display:grid;place-items:end center;overflow:hidden;background:#3c2d25}
+    .closing::before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(28,15,15,.18),rgba(28,15,15,.82)),url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Burgundy%20vineyards%20near%20Beaune%2C%20France.jpg?width=1800");background-size:cover;background-position:center}
+    .closing-inner{position:relative;z-index:2;text-align:center;padding:120px 20px 70px;width:min(900px,100%)}
+    .closing h2{font-size:clamp(3.5rem,11vw,8rem)}
+    .closing p{color:rgba(255,255,255,.8);font-family:var(--serif);font-size:1.2rem}
+    .response-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:.65rem;margin-top:1.8rem}
+    footer{background:#1d1715;color:rgba(255,255,255,.62);padding:28px 0 42px;font-size:.72rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer a{color:inherit;text-underline-offset:3px}
+    .toast{position:fixed;z-index:20;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:#1e1816;color:white;padding:12px 18px;border-radius:999px;font-size:.78rem;opacity:0;pointer-events:none;transition:.25s ease;box-shadow:0 10px 35px rgba(0,0,0,.24)}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .share{position:fixed;z-index:10;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.38);background:rgba(49,29,26,.86);color:white;backdrop-filter:blur(12px);display:grid;place-items:center;box-shadow:0 8px 25px rgba(0,0,0,.18);cursor:pointer}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+    @media (max-width:820px){
+      .wrap{width:min(100% - 28px,1180px)}
+      .nav-inner{height:64px}
+      .nav-links a:not(.top-cta){display:none}
+      .hero{min-height:88svh}
+      .hero-content{padding:120px 0 48px}
+      .hero h1{font-size:clamp(3.7rem,18vw,6.2rem)}
+      .hero .manifesto{font-size:clamp(1.55rem,7vw,2.35rem)}
+      .intro,.route,.days,.home,.food,.not-this,.costs,.status{padding-top:68px;padding-bottom:68px}
+      .intro-grid,.section-head,.route-card,.day-content,.home-grid,.food-grid,.cost-grid{grid-template-columns:1fr;gap:30px}
+      .route-copy{padding:28px 22px}
+      .route-map{min-height:360px}
+      .day{margin-bottom:70px}
+      .day-visual{min-height:420px;border-radius:22px}
+      .day-content{padding:26px 4px 0}
+      .stops{grid-template-columns:1fr}
+      .home-grid{gap:44px}
+      .hotel-meta{grid-template-columns:1fr 1fr}
+      .split{grid-template-columns:1fr}
+      .split-card{padding:28px 22px}
+      .status-grid{grid-template-columns:1fr}
+      .closing{min-height:66svh}
+      footer .wrap{display:block}
+      footer p{margin-top:12px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Bourgogne 2027</a>
+      <div class="nav-links">
+        <a href="#idee">Idee</a>
+        <a href="#route">Route</a>
+        <a href="#tage">Die Tage</a>
+        <a href="#zuhause">Zuhause</a>
+        <a href="#kosten">Kosten</a>
+        <a class="btn btn-primary top-cta" href="#antwort">Bin dabei</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-content">
+        <div class="eyebrow" style="color:#efd6ad">Wein · Essen · Zeit</div>
+        <h1>Bourgogne<br>2027</h1>
+        <div class="date">14.–16. Mai 2027 · Pfingstwochenende</div>
+        <div class="manifesto">3 Tage. 6 Domaines. 1 Fahrer. Viel Zeit dazwischen.</div>
+        <p class="hero-copy">Zwei Nächte in Beaune. Pro Tag zwei Weingüter. Lange Mittagessen, kleine Dörfer und ein Minibus, damit niemand rechnen muss, wer noch fahren darf.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tage">Reise entdecken</a>
+          <a class="btn btn-light" href="#kosten">Was kostet es?</a>
+        </div>
+        <div class="scroll-cue"><span class="scroll-line"></span><span>Nach unten für den konkreten Vorschlag</span></div>
+      </div>
+    </section>
+
+    <section class="intro" id="idee">
+      <div class="wrap intro-grid reveal">
+        <div>
+          <div class="eyebrow">Die Idee</div>
+          <div class="intro-lead">Nicht möglichst viel sehen. Sondern Burgund wirklich erleben.</div>
+          <p class="muted">Keine Weingut Rallye. Kein Sterne Zirkus. Wir bleiben zwei Nächte am gleichen Ort, besuchen sechs bewusst ausgewählte Domaines und lassen zwischen den Terminen Luft.</p>
+        </div>
+        <div class="principles">
+          <div class="principle"><strong>2 Nächte</strong><span>am selben Ort in Beaune</span></div>
+          <div class="principle"><strong>2 Domaines</strong><span>pro Tag, nicht mehr</span></div>
+          <div class="principle"><strong>1 Minibus</strong><span>mit Fahrer vor Ort</span></div>
+          <div class="principle"><strong>Viel Zeit</strong><span>für Essen und Gespräche</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="route" id="route">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Drei kleine Reisen</div><h2>Unsere Route</h2></div>
+          <p>Beaune ist unser Zuhause. Von dort fahren wir jeden Tag in eine andere Weinwelt und kommen am Abend wieder zurück. Keine Koffer. Kein Hotelwechsel.</p>
+        </div>
+        <div class="route-card reveal">
+          <div class="route-copy">
+            <div class="route-list">
+              <div class="route-item">
+                <div class="route-day">FR</div>
+                <div><strong>Côte de Nuits</strong><span>Vosne Romanée → Gevrey Chambertin</span></div>
+              </div>
+              <div class="route-item">
+                <div class="route-day">SA</div>
+                <div><strong>Corton</strong><span>Pernand Vergelesses → Aloxe Corton</span></div>
+              </div>
+              <div class="route-item">
+                <div class="route-day">SO</div>
+                <div><strong>Côte de Beaune</strong><span>Pommard → Meursault</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="route-map" aria-label="Schematische Route">
+            <svg viewBox="0 0 460 400" role="img">
+              <path d="M235 30 C210 88 235 115 213 165 C195 206 225 246 208 290 C197 318 204 343 188 373" fill="none" stroke="#b9ad9d" stroke-width="4" stroke-linecap="round"/>
+              <path d="M235 30 C227 55 222 71 224 92" fill="none" stroke="#731f2a" stroke-width="8" stroke-linecap="round"/>
+              <path d="M213 165 C198 190 199 207 206 224" fill="none" stroke="#b18a52" stroke-width="8" stroke-linecap="round"/>
+              <path d="M208 290 C203 314 200 337 188 373" fill="none" stroke="#2f4737" stroke-width="8" stroke-linecap="round"/>
+              <g font-family="DM Sans, sans-serif" font-size="13" fill="#241f1c">
+                <circle cx="235" cy="30" r="7" fill="#731f2a"/><text x="252" y="35">Gevrey Chambertin</text>
+                <circle cx="224" cy="92" r="7" fill="#731f2a"/><text x="242" y="97">Vosne Romanée</text>
+                <circle cx="213" cy="165" r="9" fill="#241f1c"/><text x="233" y="170" font-weight="600">Beaune</text>
+                <circle cx="202" cy="206" r="7" fill="#b18a52"/><text x="221" y="211">Pernand Vergelesses</text>
+                <circle cx="206" cy="224" r="7" fill="#b18a52"/><text x="225" y="229">Aloxe Corton</text>
+                <circle cx="208" cy="290" r="7" fill="#2f4737"/><text x="228" y="295">Pommard</text>
+                <circle cx="188" cy="373" r="7" fill="#2f4737"/><text x="208" y="378">Meursault</text>
+              </g>
+              <text x="48" y="65" font-family="Playfair Display,serif" font-size="22" fill="#731f2a">Côte de Nuits</text>
+              <text x="260" y="330" font-family="Playfair Display,serif" font-size="22" fill="#2f4737">Côte de Beaune</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="days" id="tage">
+      <div class="wrap">
+        <article class="day reveal">
+          <div class="day-visual day-friday">
+            <div class="day-title">
+              <div class="eyebrow" style="color:#f0d9b0">Tag 1 · Freitag, 14. Mai</div>
+              <h3>Côte de Nuits</h3>
+              <p>Ankommen. Pinot Noir. Vosne Romanée und Gevrey Chambertin. Am Abend zurück nach Beaune.</p>
+            </div>
+          </div>
+          <div class="day-content">
+            <div>
+              <div class="rhythm">Anreise · Mittagessen · 14.00 Wein · 16.30 Wein · Abend in Beaune</div>
+              <p class="muted">Der erste Tag soll sich nicht nach Programm anfühlen. Wir kommen an, essen etwas und tauchen danach direkt in die Côte de Nuits ein.</p>
+            </div>
+            <div class="stops">
+              <div class="stop">
+                <span class="num">01 · Vosne Romanée</span>
+                <h4>Domaine Armelle et Bernard Rion</h4>
+                <p>Familienbetrieb seit 1896. Unser Wunsch: die 90 minütige Tour durch die Terroirs, danach Keller und fünf Weine.</p>
+                <a href="https://www.domainerion.fr/visites/" target="_blank" rel="noopener">Domaine ansehen ↗</a>
+              </div>
+              <div class="stop">
+                <span class="num">02 · Gevrey Chambertin</span>
+                <h4>Domaine Quivy</h4>
+                <p>Zweiter Pinot Noir Moment des Tages. Ein bewusst kleinerer, persönlicher Abschluss bevor es zurück nach Beaune geht.</p>
+                <span class="small muted">2027 Termin noch anzufragen</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="day reveal">
+          <div class="day-visual day-saturday">
+            <div class="day-title">
+              <div class="eyebrow" style="color:#f0d9b0">Tag 2 · Samstag, 15. Mai</div>
+              <h3>Corton</h3>
+              <p>Kleine Dörfer. Familienweingüter. Ein langes Mittagessen in Pernand. Kein Grund, irgendwo schnell weiter zu müssen.</p>
+            </div>
+          </div>
+          <div class="day-content">
+            <div>
+              <div class="rhythm">10.15 Wein · lange Tafel · 15.00 Wein · Weinberge · zurück nach Beaune</div>
+              <p class="muted">Der ländlichste Tag. Pernand Vergelesses und Aloxe Corton liegen nah beieinander. Genau richtig für einen Tag ohne Fahrerei.</p>
+            </div>
+            <div class="stops">
+              <div class="stop">
+                <span class="num">03 · Pernand Vergelesses</span>
+                <h4>Domaine Rollin Père & Fils</h4>
+                <p>Vier Generationen, rund 14 Hektaren und 14 Appellationen. Ein Familienbetrieb, der vom Rebberg bis zur Flasche alles selbst macht.</p>
+                <a href="https://www.domaine-rollin.com/" target="_blank" rel="noopener">Domaine ansehen ↗</a>
+              </div>
+              <div class="stop">
+                <span class="num">Mittag · Pernand</span>
+                <h4>La Paulée de Pernand</h4>
+                <p>Weinbar, Cave und Restaurant. Unkompliziert, regional und genau der Ort, an dem man beim Mittagessen nicht auf die Uhr schauen will.</p>
+                <a href="https://www.lapaulee-pernand.fr/" target="_blank" rel="noopener">Restaurant ansehen ↗</a>
+              </div>
+              <div class="stop">
+                <span class="num">04 · Aloxe Corton</span>
+                <h4>Domaine Michel Voarick</h4>
+                <p>Ein kleinerer Familienbetrieb für den zweiten Besuch des Tages. Aloxe Corton und Pernand Vergelesses statt grosser Show.</p>
+                <span class="small muted">2027 Termin noch anzufragen</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="day reveal">
+          <div class="day-visual day-sunday">
+            <div class="day-title">
+              <div class="eyebrow" style="color:#f0d9b0">Tag 3 · Sonntag, 16. Mai</div>
+              <h3>Côte de Beaune</h3>
+              <p>Pommard. Meursault. Rot beginnt, Weiss hört auf. Dazwischen ein Mittagessen und nochmals ganz viel Burgund.</p>
+            </div>
+          </div>
+          <div class="day-content">
+            <div>
+              <div class="rhythm">10.30 Pommard · Mittagessen · 15.00 Meursault · letztes Glas · Heimfahrt</div>
+              <p class="muted">Pfingstsonntag. Deshalb setzen wir hier auf zwei Häuser, die sonntags grundsätzlich Besuche anbieten. Für 2027 bestätigen wir die Öffnung noch.</p>
+            </div>
+            <div class="stops">
+              <div class="stop">
+                <span class="num">05 · Pommard</span>
+                <h4>Château de Pommard</h4>
+                <p>Pinot Noir zum Auftakt. Nicht unser kleinster Betrieb, dafür am Sonntag planbar und ein guter Einstieg in Pommard.</p>
+                <a href="https://chateaudepommard.com/" target="_blank" rel="noopener">Château ansehen ↗</a>
+              </div>
+              <div class="stop">
+                <span class="num">06 · Meursault</span>
+                <h4>Château de Meursault</h4>
+                <p>Der Abschluss gehört dem Chardonnay. Aktuell von Mai bis September auch sonntags geöffnet. Genau richtig für das letzte Glas.</p>
+                <a href="https://www.chateau-meursault.com/" target="_blank" rel="noopener">Château ansehen ↗</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="home" id="zuhause">
+      <div class="wrap home-grid reveal">
+        <div>
+          <div class="eyebrow">Zwei Nächte. Ein Zuhause.</div>
+          <h2>Beaune</h2>
+          <p>Unser Auto kann stehen bleiben. Am Morgen kommt der Fahrer, am Abend bringt er uns zurück. Die Altstadt ist zu Fuss erreichbar und wir müssen während der ganzen Reise keinen Koffer mehr anfassen.</p>
+        </div>
+        <div class="hotel-card">
+          <div class="eyebrow">Aktueller Favorit</div>
+          <h3>Hôtel de France</h3>
+          <p class="muted">22 Zimmer, gegenüber vom Bahnhof und wenige Minuten zu Fuss von der Altstadt. Im Haus liegt das Bistro La Régalade. Kein Luxustempel. Genau deshalb passt es.</p>
+          <div class="hotel-meta">
+            <div><strong>5</strong><span>Einzelzimmer</span></div>
+            <div><strong>1</strong><span>Dreibettzimmer</span></div>
+            <div><strong>5–8</strong><span>Personen</span></div>
+          </div>
+          <a class="btn btn-primary" href="https://hoteldefrancebeaune.com/" target="_blank" rel="noopener">Hotel ansehen ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="food">
+      <div class="wrap food-grid reveal">
+        <div>
+          <div class="eyebrow">Essen</div>
+          <div class="quote">Nicht Sterne sammeln. <em>Tische finden, an denen wir gerne sitzen bleiben.</em></div>
+        </div>
+        <div class="food-list">
+          <div class="food-item"><strong>Freitag · Beaune</strong><span>Am ersten Abend unkompliziert im Bistro La Régalade im Hotel oder wenige Schritte in die Altstadt.</span></div>
+          <div class="food-item"><strong>Samstag · Pernand Vergelesses</strong><span>La Paulée de Pernand. Burgundisch, unkompliziert, Wein im Mittelpunkt. Zeit für ein langes Mittagessen.</span></div>
+          <div class="food-item"><strong>Sonntag · Meursault</strong><span>Zum Abschluss ein ehrliches Mittagessen im Dorf. Die konkrete Adresse legen wir mit den definitiven Öffnungszeiten 2027 fest.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="not-this">
+      <div class="wrap split reveal">
+        <div class="split-card">
+          <div class="eyebrow">Nicht das</div>
+          <h3>Was diese Reise nicht ist</h3>
+          <ul class="checks">
+            <li>Keine Weingut Rallye</li>
+            <li>Kein Sterne Zirkus</li>
+            <li>Kein ständiges Kofferpacken</li>
+            <li>Keiner muss beim Wein aufpassen</li>
+          </ul>
+        </div>
+        <div class="split-card good">
+          <div class="eyebrow" style="color:#d7b56f">Sondern</div>
+          <h3>Was sie sein soll</h3>
+          <ul class="checks">
+            <li>Guter Wein</li>
+            <li>Echtes Essen</li>
+            <li>Zeit</li>
+            <li>Gespräche</li>
+            <li>Burgund</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="costs" id="kosten">
+      <div class="wrap cost-grid reveal">
+        <div>
+          <div class="eyebrow">Planungsgrösse</div>
+          <h2>Grobe Kosten</h2>
+          <p class="muted">Noch keine Offerte. Aber konkret genug, damit wir wissen, in welcher Liga wir uns bewegen. Sobald die Gruppe grundsätzlich Ja sagt, holen wir Hotel und Fahrer verbindlich ein.</p>
+          <div class="cost-list">
+            <div class="cost-line"><strong>Hotel</strong><span>2 Nächte · 6 Zimmer</span></div>
+            <div class="cost-line"><strong>Minibus + Fahrer</strong><span>alle drei Tage vor Ort</span></div>
+            <div class="cost-line"><strong>Degustationen</strong><span>6 Domaines</span></div>
+            <div class="cost-line"><strong>Essen</strong><span>3 Mittagessen · 2 Abendessen</span></div>
+          </div>
+        </div>
+        <div class="price">
+          <span class="eyebrow">Richtwert pro Person</span>
+          <strong>CHF 850–1’150</strong>
+          <p>Je nach finaler Gruppengrösse, Zimmerwahl und Degustationen. An und Rückreise aus der Schweiz nicht eingerechnet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="status">
+      <div class="wrap reveal">
+        <div class="eyebrow">Wo stehen wir?</div>
+        <h2>Konkreter Vorschlag.<br>Noch nichts gebucht.</h2>
+        <div class="status-grid">
+          <div class="status-card"><b>Datum</b><span>Freitag, 14. bis Sonntag, 16. Mai 2027. Pfingstwochenende.</span></div>
+          <div class="status-card"><b>Plan geprüft</b><span>Route und heutige Öffnungszeiten passen grundsätzlich. 2027 muss bestätigt werden.</span></div>
+          <div class="status-card"><b>Nächster Schritt</b><span>Wenn die Gruppe Ja sagt: Hotel, Fahrer und alle sechs Domaines verbindlich anfragen.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="antwort">
+      <div class="closing-inner">
+        <div class="eyebrow" style="color:#e6c38a">14.–16. Mai 2027</div>
+        <h2>Also.<br>Burgund?</h2>
+        <p>Guter Wein. Echtes Essen. Viel Zeit dazwischen.</p>
+        <div class="response-buttons">
+          <button class="btn btn-primary response" data-response="Burgund 2027: Bin dabei 🍷">Bin dabei</button>
+          <button class="btn btn-light response" data-response="Burgund 2027: Grundsätzlich ja. Ich muss das Datum noch prüfen.">Datum prüfen</button>
+          <button class="btn btn-ghost response" style="color:white" data-response="Burgund 2027: Bei mir klappt es leider nicht.">Leider nein</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div><strong style="color:white">BOURGOGNE 2027</strong><br>Planungsstand · September 2026</div>
+      <p>Fotos: Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Beaune_(C%C3%B4te_d%27Or,_Fr)_Vignobles.JPG" target="_blank" rel="noopener">Beaune</a> · <a href="https://commons.wikimedia.org/wiki/File:Vineyards_Gevrey-Chambertin.jpg" target="_blank" rel="noopener">Gevrey</a> · <a href="https://commons.wikimedia.org/wiki/Category:Pernand-Vergelesses" target="_blank" rel="noopener">Pernand</a> · <a href="https://commons.wikimedia.org/wiki/File:C%C3%B4te_de_Beaune,_Burgundy_vineyard.jpg" target="_blank" rel="noopener">Côte de Beaune</a></p>
+    </div>
+  </footer>
+
+  <button class="share" id="shareBtn" aria-label="Seite teilen" title="Seite teilen">↗</button>
+  <div class="toast" id="toast">Antwort kopiert</div>
+
+  <script>
+    const reveal = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); reveal.unobserve(e.target); }});
+    },{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+
+    const toast = document.getElementById('toast');
+    let timer;
+    function showToast(msg){
+      toast.textContent=msg;
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer=setTimeout(()=>toast.classList.remove('show'),2200);
+    }
+    document.querySelectorAll('.response').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        const text=btn.dataset.response;
+        try{ await navigator.clipboard.writeText(text); showToast('Antwort kopiert · jetzt in die Gruppe einfügen'); }
+        catch(e){ showToast(text); }
+      });
+    });
+    document.getElementById('shareBtn').addEventListener('click', async ()=>{
+      const shareData={title:'Bourgogne 2027',text:'Unser Vorschlag für Burgund 2027 🍷',url:location.href};
+      if(navigator.share){ try{await navigator.share(shareData)}catch(e){} }
+      else{ try{await navigator.clipboard.writeText(location.href);showToast('Link kopiert')}catch(e){} }
+    });
+  </script>
+</body>
+</html>
